@@ -7,7 +7,7 @@ const preloadImages = (selector = 'img') => {
 };
 
 gsap.registerPlugin(ScrollTrigger); // Register GSAP's ScrollTrigger plugin
-gsap.registerPlugin(SplitText);     // Register GSAP's SplitText plugin
+// gsap.registerPlugin(SplitText);     // Register GSAP's SplitText plugin
 
 const grid = document.querySelector('.grid'); // Select the container that holds all grid items
 const gridImages = grid.querySelectorAll('.grid__item-imgwrap'); // Select all elements with the class '.grid__item-imgwrap'
@@ -15,7 +15,7 @@ const gridImages = grid.querySelectorAll('.grid__item-imgwrap'); // Select all e
 const marqueeInner = document.querySelector('.mark > .mark__inner'); // Select the inner element of the marquee
 
 const textElement = document.querySelector('.text'); // Select the text element
-var splitTextEl = new SplitText(textElement, {type: 'chars'}); // Split the text into individual characters for animation
+// var splitTextEl = new SplitText(textElement, {type: 'chars'}); // Split the text into individual characters for animation
 
 const gridFull = document.querySelector('.grid--full'); // Select the full grid container
 
@@ -105,16 +105,16 @@ const animateTextElement = () => {
       scrub: true,                       // Smooth scrub
     }
   })
-  .from(splitTextEl.chars, {
-    // Animate each character individually
-    ease: 'sine',
-    yPercent: 300,                       // Move characters from below the viewport
-    autoAlpha: 0,                        // Start with opacity 0
-    stagger: {                           // Stagger the animation for each character
-      each: 0.04,                        // 0.04 seconds between each character's animation
-      from: 'center'                     // Animate characters from the center outward
-    }
-  });
+  // .from(splitTextEl.chars, {
+  //   // Animate each character individually
+  //   ease: 'sine',
+  //   yPercent: 300,                       // Move characters from below the viewport
+  //   autoAlpha: 0,                        // Start with opacity 0
+  //   stagger: {                           // Stagger the animation for each character
+  //     each: 0.04,                        // 0.04 seconds between each character's animation
+  //     from: 'center'                     // Animate characters from the center outward
+  //   }
+  // });
 };
 
 // Function to animate the full grid with staggered delays per column
